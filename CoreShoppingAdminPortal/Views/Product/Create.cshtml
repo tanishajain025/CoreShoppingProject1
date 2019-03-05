@@ -1,0 +1,54 @@
+﻿@model CoreShoppingAdminPortal.Models.Product
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Register</h2>
+
+<form asp-action="create" asp-controller="Product">
+    <div class="form-group row">
+
+        <label for="text" class="col-sm-2 col-form-label" asp-for="ProductName">Product Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Text" asp-for="ProductName">
+        </div>
+        <label for="text" class="col-sm-2 col-form-label" asp-for="ProductPrice">Product Price</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Numeric" asp-for="ProductPrice">
+        </div>
+
+        <label for="text" class="col-sm-2 col-form-label" asp-for="ProductQty">Product Quantity</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Numeric" asp-for="ProductQty">
+        </div>
+        <label for="image" class="col-sm-2 col-form-label" asp-for="ProductImage">Product Image</label>
+        <div class="col-sm-10">
+            <input type="image" class="form-control" placeholder="Image" asp-for="ProductImage">
+        </div>
+        <label for="text" class="col-sm-2 col-form-label" asp-for="ProductDescription">Product Description</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Text" asp-for="ProductDescription">
+        </div>
+
+        <label for="text" class="col-sm-2 col-form-label" asp-for="ProductCategoryId">Product Category Id</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" asp-for="ProductCategoryId" asp-items="ViewBag.products1">
+        </div>
+        <label for="text" class="col-sm-2 col-form-label" asp-for="VendorId">Vendor Id</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control"  asp-for="VendorId" asp-items="ViewBag.products">
+        </div>
+    </div>
+
+    <br />
+    @using (Html.BeginForm("Create", "Product", FormMethod.Post))
+    {
+
+        <input type="submit" value="Register" class="btn btn-success"  />
+
+        <button class="btn btn-success" asp-controller="Product" asp-action="Index">Back</button>
+
+    }
+
+</form>
+

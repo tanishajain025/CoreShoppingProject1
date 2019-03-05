@@ -1,0 +1,40 @@
+﻿@model CoreShoppingAdminPortal.Models.Vendor
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Edit Your Details</h2>
+
+<form asp-action="edit" asp-controller="Vendor">
+    <div class="form-group row">
+        <input type="hidden" asp-for="VendorId" />
+        <br />
+        <label for="text" class="col-sm-2 col-form-label" asp-for="VendorName"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="VendorName">
+        </div>
+        <label for="text" class="col-sm-2 col-form-label" asp-for="EmailId"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="EmailId">
+        </div>
+
+        <label for="text" class="col-sm-2 col-form-label" asp-for="PhoneNo"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="PhoneNo">
+        </div>
+        <label for="text" class="col-sm-2 col-form-label" asp-for="VendorDescription"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="VendorDescription">
+        </div>
+
+    </div>
+
+    <br />
+
+    <input type="submit" value="Edit Details" class="btn btn-success" />
+    &nbsp;
+    <button class="btn btn-success" asp-controller="Vendor" asp-action="Index">Back</button>
+</form>
+
+
+

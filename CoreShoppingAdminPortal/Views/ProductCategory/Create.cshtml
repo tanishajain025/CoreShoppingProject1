@@ -1,0 +1,30 @@
+﻿@model CoreShoppingAdminPortal.Models.ProductCategory
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Register</h2>
+<form asp-action="create" asp-controller="ProductCategory">
+    <div class="form-group row">
+
+        <label for="text" class="col-sm-2 col-form-label" asp-for="CategoryName">Product Category Name</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="Text" asp-for="CategoryName">
+        </div>
+
+        <label for="text" class="col-sm-2 col-form-label" asp-for="CategoryDescription">Product Category Description</label>
+        <div class="col-sm-9">
+
+            <input type="text" class="form-control" placeholder="Text" asp-for="CategoryDescription">
+        </div>
+
+    </div>
+
+    <input type="submit" value="Register" class="btn btn-success" />
+    &nbsp;
+    <button class="btn btn-success" asp-controller="ProductCategory" asp-action="Index">Back</button>
+
+</form>
